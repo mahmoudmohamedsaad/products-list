@@ -7,8 +7,9 @@ const Items = (props) => {
         items.map(item => {
             return(
                 <div key={item.id} className="item">
+                    <p>{item.quantity}</p>
                     <p>{item.product}</p>
-                    <p>{item.price}</p>
+                    <p>{item.price * item.quantity}</p>
                     <p className="delete" onClick={() => del(item.id)}>&times;</p>
                 </div>
             )
@@ -19,6 +20,7 @@ const Items = (props) => {
     return (
         <div>
             <div className="header item">
+                <p>Quantity</p>
                 <p>Product</p>
                 <p>Price</p>
                 <p>Edit</p>
